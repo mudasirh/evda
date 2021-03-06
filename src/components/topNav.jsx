@@ -4,7 +4,7 @@ const TopNav = () => {
     <nav className='navbar navbar-expand-sm bg-white container-topNav'>
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item lang'>
-          <div class='dropdown '>
+          <div className='dropdown '>
             <a
               className='nav-link'
               href='#'
@@ -13,14 +13,14 @@ const TopNav = () => {
             >
               <span>ENG</span> <i className='fa fa-angle-down'></i>
             </a>
-            <ul class='dropdown-menu dropdown-menu-end'>
+            <ul className='dropdown-menu dropdown-menu-end'>
               <li>
-                <a class='dropdown-item' href='#'>
+                <a className='dropdown-item' href='#'>
                   ENG
                 </a>
               </li>
               <li>
-                <a class='dropdown-item' href='#'>
+                <a className='dropdown-item' href='#'>
                   ARB
                 </a>
               </li>

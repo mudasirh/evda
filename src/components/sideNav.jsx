@@ -1,6 +1,6 @@
 import Dashboard from "./dashboard";
 
-const SideNav = (props) => {
+const SideNav = ({chartData, getChartData, categories}) => {
   return (
     <main className='container-fluid p-0'>
       <div className='d-flex align-items-start'>
@@ -8,7 +8,7 @@ const SideNav = (props) => {
           className='nav flex-column nav-pills me-3 container-sideNav bg-white'
           id='v-pills-tab'
         >
-          <div class='navbar-brand text-center' href='#'>
+          <div className='navbar-brand text-center' href='#'>
             <img src='/assets/img/brand/ADVA-Logo.svg' alt='' />
           </div>
           <hr />
@@ -158,7 +158,7 @@ const SideNav = (props) => {
         <div className='tab-content sideNav-content' id='v-pills-tabContent'>
           {/* Dashboard */}
           <div className='tab-pane fade show active' id='v-pills-home'>
-            <Dashboard />
+            <Dashboard chartData={chartData} categories={categories} />
           </div>
 
           {/* Drivers */}
