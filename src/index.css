@@ -184,6 +184,22 @@ code {
   width: 30px;
 }
 
+.dashboard-orders-table table td .status {
+  padding: 2px;
+}
+.dashboard-orders-table .processing {
+  color: #f9bc1f;
+  background: #fff5e5;
+  border-radius: 20px;
+  padding: 5px 8px 5px 8px;
+}
+.dashboard-orders-table .delivering {
+  color: #1aa0f9;
+  background: #e5eeff;
+  border-radius: 20px;
+  padding: 5px 8px 5px 8px;
+}
+
 /* order table pagination ///////////////////////// */
 .order-table-pagination {
   cursor: pointer;
