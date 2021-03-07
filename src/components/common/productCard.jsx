@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const ProductCard = ({products}) => {
   return (
     <div className='product-card'>
       <div className='row g-3'>
         {products.map((p) => {
           return (
-            <div className='col-2'>
+            <div key={p._id} className='col-2'>
               <div className='card p-2'>
                 <div className='d-flex justify-content-between align-items-center action'>
                   <div>
@@ -14,27 +15,21 @@ const ProductCard = ({products}) => {
                       value=''
                     />
                   </div>
-                  <div class='dropdown'>
+                  <div className='dropdown'>
                     <img
                       src='assets/img/icons/Dashboard-Actions.svg'
                       alt=''
                       data-bs-toggle='dropdown'
                     />
-                    <ul class='dropdown-menu m-2'>
+                    <ul className='dropdown-menu m-2'>
                       <li>
-                        <a class='dropdown-item' href='#'>
-                          Product Stats
-                        </a>
+                        <a className='dropdown-item'>Product Stats</a>
                       </li>
                       <li>
-                        <a class='dropdown-item' href='#'>
-                          Review Product orders
-                        </a>
+                        <a className='dropdown-item'>Review Product orders</a>
                       </li>
                       <li>
-                        <a class='dropdown-item' href='#'>
-                          Delete Product
-                        </a>
+                        <a className='dropdown-item'>Delete Product</a>
                       </li>
                     </ul>
                   </div>
