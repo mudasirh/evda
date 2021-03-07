@@ -111,6 +111,69 @@ const orders = [
   },
 ];
 
+const products = [
+  {
+    _id: "5b21ca3eeb7f6fbccd471815",
+    name: "Product 1",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+  {
+    _id: "5b21ca2sd23a3eeb7f6fbccd471815",
+    name: "Product 2",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd471815",
+    name: "Product 1",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+  {
+    _id: "5b21kca3eeb7f6fbccd471815",
+    name: "Product 1",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+  {
+    _id: "5b2uu1ca3eeb7f6fbccd471815",
+    name: "Product 1",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+  {
+    _id: "5b2908091ca3eeb7f6fbccd471815",
+    name: "Product 1",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+  {
+    _id: "5b9921ca3eeb7f6fbccd471815",
+    name: "Product 1",
+    category: "Cosmetics",
+    Brand: "Flank",
+    stock: 55,
+    price: 1233,
+  },
+];
+
+export function getProducts() {
+  return products;
+}
+
 export function getOrders() {
   return orders;
 }

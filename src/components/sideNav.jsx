@@ -1,5 +1,6 @@
 import Products from "./products";
 import Dashboard from "./dashboard";
+import AddOrders from "./addOrders";
 
 const SideNav = ({chartData, orders, categories, sortColumn}) => {
   return (
@@ -167,9 +168,9 @@ const SideNav = ({chartData, orders, categories, sortColumn}) => {
             />
           </div>
 
-          {/* orders */}
+          {/* add products */}
           <div className='tab-pane fade' id='v-pills-orders'>
-            orders
+            <AddOrders />
           </div>
           <div className='tab-pane' id='v-pills-products'>
             <Products />

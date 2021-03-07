@@ -222,6 +222,7 @@ code {
 }
 
 /* Products ///////////////////////////////// */
+
 .products .nav-pills .nav-link.active,
 .products .nav-pills .show > .nav-link {
   color: #000;
@@ -265,6 +266,7 @@ code {
 
 .products-header ul li {
   padding: 0 10px 0 10px;
+  margin: 0;
 }
 
 .products-header ul li input {
@@ -273,13 +275,101 @@ code {
 
   background: transparent;
   width: 260px;
-  padding: 6px;
+  padding: 8px;
 }
 .products-header ul li .input {
   border: 1px solid rgba(179, 179, 179, 0.5);
-  padding-left: 7px;
+  background-color: white;
+  padding-left: 8px;
 }
 .products-header ul li .input i {
   color: #5f5a56;
   font-size: 1rem;
+}
+
+/* Products card /////////////////////////// */
+
+.product-card .card {
+  box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 0px;
+  font-size: 0.7rem;
+}
+.product-card .card .action {
+  padding-bottom: 10px;
+}
+
+/* triangle arrow for drop down menu */
+
+.product-card .dropdown-menu::before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: "";
+}
+.product-card .dropdown-menu::after {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  border-left: 6px solid transparent;
+  content: "";
+}
+/* /////////////////////////// */
+
+/* add order Page/////////////////////////// */
+
+.add-order {
+  box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 0px;
+  height: 100%;
+}
+
+.add-order .input {
+  border: 1px solid rgba(179, 179, 179, 0.5);
+  background-color: white;
+  padding-left: 8px;
+}
+.add-order .input input {
+  outline: none;
+  border: 0;
+
+  background: transparent;
+  width: 380px;
+  padding: 8px;
+}
+.add-order .input i {
+  color: #5f5a56;
+  font-size: 1rem;
+}
+
+.add-order .select-items {
+  border: 1px solid rgba(179, 179, 179, 0.5);
+}
+
+.select-items img {
+  width: 60px;
+}
+.select-items table td {
+  vertical-align: middle;
+  border: 0;
+  padding: 4px;
+}
+
+.select-items thead {
+  border: 0;
+  /* border: 2px solid #e6e6e6; */
+  background-color: #fcfbfb;
+  color: #d1d1d1;
+}
+.select-items thead tr {
+  padding: 0;
 }

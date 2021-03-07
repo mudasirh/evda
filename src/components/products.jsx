@@ -1,18 +1,73 @@
 import React, {Component} from "react";
+import ProductCard from "./common/productCard";
+import {getProducts} from "../services/fakeDBService";
+import Pagination from "./common/pagination";
+import Paginate from "../utils/paginate";
 
 class Products extends Component {
-  state = {};
+  state = {
+    products: getProducts(),
+    currentPage: 1,
+    pageSize: 18,
+    PaginationInput: "",
+  };
+
+  componentDidMount() {
+    this.setState({PaginationInput: this.state.pageSize});
+  }
+
+  // Pagination
+
+  handlePageChange = (page) => {
+    this.setState({currentPage: page});
+  };
+  handlePrevious = () => {
+    if (this.state.currentPage !== 1) {
+      let currentPage = this.state.currentPage;
+      this.setState({currentPage: --currentPage});
+    }
+  };
+  handleNext = () => {
+    if (
+      this.state.currentPage !==
+      Math.ceil(this.state.products.length / this.state.pageSize)
+    ) {
+      let currentPage = this.state.currentPage;
+      this.setState({currentPage: ++currentPage});
+    }
+  };
+  handlePaginationInputChange = ({currentTarget}) => {
+    if (!isNaN(currentTarget.value) && currentTarget.value < 100) {
+      this.setState({PaginationInput: currentTarget.value}, () => {
+        if (this.state.PaginationInput > 0 && currentTarget.value !== "") {
+          this.setState({pageSize: this.state.PaginationInput});
+        }
+      });
+    }
+  };
+
+  // filtered products
+
+  // This method filter order table data according to the sorted value and page size.
+  filteredOrders = () => {
+    const {products} = this.state;
+    const {pageSize, currentPage} = this.state;
+    const paginatedUsers = Paginate(products, currentPage, pageSize);
+    return {data: paginatedUsers};
+  };
+
   render() {
+    const {data} = this.filteredOrders();
     return (
       <div>
         <h1>Products</h1>
         <small>{`Home > Products`}</small>
         <div className='p-3 bg-white products'>
           <div className='card '>
-            <ul class='nav nav-pills ' id='pills-tab'>
-              <li class='nav-item'>
+            <ul className='nav nav-pills ' id='pills-tab'>
+              <li className='nav-item'>
                 <button
-                  class='nav-link active'
+                  className='nav-link active'
                   id='pills-home-tab'
                   data-bs-toggle='pill'
                   data-bs-target='#pills-home'
@@ -21,9 +76,9 @@ class Products extends Component {
                   Products
                 </button>
               </li>
-              <li class='nav-item'>
+              <li className='nav-item'>
                 <button
-                  class='nav-link'
+                  className='nav-link'
                   id='pills-profile-tab'
                   data-bs-toggle='pill'
                   data-bs-target='#pills-profile'
@@ -32,9 +87,9 @@ class Products extends Component {
                   Categories
                 </button>
               </li>
-              <li class='nav-item'>
+              <li className='nav-item'>
                 <button
-                  class='nav-link'
+                  className='nav-link'
                   id='pills-contact-tab'
                   data-bs-toggle='pill'
                   data-bs-target='#pills-contact'
@@ -48,9 +103,9 @@ class Products extends Component {
             {/*  */}
             <div className='products-header d-flex justify-content-between align-items-center'>
               <div className='p-3'>
-                <div class='dropdown mx-2'>
+                <div className='dropdown mx-2'>
                   <button
-                    class='btn btn-secondary dropdown-toggle'
+                    className='btn btn-secondary dropdown-toggle'
                     type='button'
                     id='dropdownMenu2'
                     data-bs-toggle='dropdown'
@@ -58,19 +113,19 @@ class Products extends Component {
                   >
                     Filter
                   </button>
-                  <ul class='dropdown-menu'>
+                  <ul className='dropdown-menu'>
                     <li>
-                      <button class='dropdown-item' type='button'>
+                      <button className='dropdown-item' type='button'>
                         Action
                       </button>
                     </li>
                     <li>
-                      <button class='dropdown-item' type='button'>
+                      <button className='dropdown-item' type='button'>
                         Another action
                       </button>
                     </li>
                     <li>
-                      <button class='dropdown-item' type='button'>
+                      <button className='dropdown-item' type='button'>
                         Something else here
                       </button>
                     </li>
@@ -107,16 +162,29 @@ class Products extends Component {
               </div>
             </div>
             {/*  */}
-            <div class='tab-content' id='pills-tabContent'>
-              <div class='tab-pane fade show active' id='pills-home'>
-                Products
+            <div className='tab-content' id='pills-tabContent'>
+              <div className='tab-pane fade show active' id='pills-home'>
+                <ProductCard products={data} />
               </div>
-              <div class='tab-pane fade' id='pills-profile'>
+              <div className='tab-pane fade' id='pills-profile'>
                 Categories
               </div>
-              <div class='tab-pane fade' id='pills-contact'>
+              <div className='tab-pane fade' id='pills-contact'>
                 Brands
               </div>
+            </div>
+            <div className='order-table-pagination'>
+              <Pagination
+                pageSize={this.state.pageSize}
+                length={this.state.products.length}
+                onPageChange={this.handlePageChange}
+                currentPage={this.state.currentPage}
+                currentLength={data.length}
+                onPrevious={this.handlePrevious}
+                onNext={this.handleNext}
+                onPaginationInputChange={this.handlePaginationInputChange}
+                PaginationInput={this.state.PaginationInput}
+              />
             </div>
           </div>
         </div>
