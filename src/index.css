@@ -1,7 +1,3 @@
-:root {
-  --primary: "#000";
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -34,6 +30,11 @@ code {
   position: absolute;
   top: 0;
 }
+@media (max-width: 576px) {
+  .container-sideNav {
+    left: -250px;
+  }
+}
 .container-sideNav a {
   padding: 10px;
   padding-left: 40px;
@@ -65,13 +66,17 @@ code {
   width: 100%;
   margin: 20px 20px 50px 250px;
 }
+@media (max-width: 576px) {
+  .sideNav-content {
+    margin: 20px 2px 50px 2px;
+  }
+}
 
 /* Top navigation ///////////////////////////////// */
 
 .container-topNav {
   box-shadow: 1px 1px 1px 0.1px rgba(0, 0, 0, 0.1);
 }
-
 .container-topNav img {
   margin-right: 15px;
   width: 20px;
@@ -130,6 +135,7 @@ code {
   box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   padding: 0px;
+  height: 100%;
 }
 
 /* Categories /////////////////// */
@@ -148,4 +154,132 @@ code {
 .dashboard-categories .progress {
   height: 4px;
   background-color: rgba(191, 97, 89, 0.1);
+}
+
+/* dashboard order table //////////////////////////// */
+
+.dashboard-orders {
+  box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 0px;
+  height: 100%;
+}
+.dashboard-orders hr {
+  margin: 0px 15px 25px 15px;
+  height: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(68, 68, 68);
+}
+
+.dashboard-orders-table table td {
+  border: 0;
+}
+.dashboard-orders-table table th {
+  border: 0;
+  border-bottom: 1px solid #a5a5a5;
+  color: #a5a5a5;
+  font-weight: 500;
+}
+.dashboard-orders-table img {
+  width: 30px;
+}
+
+/* order table pagination ///////////////////////// */
+.order-table-pagination {
+  cursor: pointer;
+  border: 0;
+}
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+  border-radius: 0;
+}
+.page-item,
+.page-link {
+  border: 0;
+  padding: 5px;
+  margin-right: 2px;
+  border-radius: 0;
+}
+
+.pagination-link {
+  border: 1px solid #000;
+  background-color: transparent;
+}
+.pagination-link:hover,
+.page-link:hover {
+  background-color: transparent;
+}
+.pagination-link:hover {
+  border: 1px solid #000;
+}
+/* pagination input */
+.pagination-input,
+.pagination-input:hover {
+  color: #000;
+}
+.pagination-input input {
+  width: 30px;
+}
+
+/* Products ///////////////////////////////// */
+.products .nav-pills .nav-link.active,
+.products .nav-pills .show > .nav-link {
+  color: #000;
+  background-color: transparent;
+  font-weight: 500;
+  border-bottom: 2px solid #000;
+}
+
+.products hr {
+  margin: 0px;
+  height: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(68, 68, 68);
+}
+
+.products .card {
+  border: 0;
+}
+.products {
+  box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 0px;
+  height: 100%;
+}
+.products .tab-content {
+  margin: 20px;
+}
+
+.products .dropdown-toggle {
+  background-color: white;
+  color: #000;
+  border: #aaa 1px solid;
+  padding: 4px 6px 4px 6px;
+  border-radius: 0;
+}
+.products .products-header {
+  background-color: #f9f9f9;
+}
+
+/* products header list */
+
+.products-header ul li {
+  padding: 0 10px 0 10px;
+}
+
+.products-header ul li input {
+  outline: none;
+  border: 0;
+
+  background: transparent;
+  width: 260px;
+  padding: 6px;
+}
+.products-header ul li .input {
+  border: 1px solid rgba(179, 179, 179, 0.5);
+  padding-left: 7px;
+}
+.products-header ul li .input i {
+  color: #5f5a56;
+  font-size: 1rem;
 }

@@ -1,9 +1,9 @@
 import Card from "./common/card";
 import Chart from "./common/chart";
 import Categories from "./common/categories";
-import OrderTable from "./common/orderTable";
+import OrderTable from "./orderTable";
 
-const Dashboard = ({chartData, categories}) => {
+const Dashboard = ({chartData, categories, orders, sortColumn, onSort}) => {
   let cards = [
     {
       heading: "Orders",
@@ -59,7 +59,7 @@ const Dashboard = ({chartData, categories}) => {
       </div>
       <div className='row'>
         <div className='col-12'>
-          <OrderTable />
+          <OrderTable orders={orders} sortColumn={sortColumn} onSort={onSort} />
         </div>
       </div>
     </div>

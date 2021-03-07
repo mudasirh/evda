@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const TopNav = () => {
   return (
-    <nav className='navbar navbar-expand-sm bg-white container-topNav'>
+    <nav className='navbar navbar-expand bg-white container-topNav'>
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item lang'>
           <div className='dropdown '>
             <a
-              className='nav-link'
+              className='nav-link '
               href='#'
               id='dropdownMenuButton1'
               data-bs-toggle='dropdown'

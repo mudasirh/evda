@@ -1,8 +1,8 @@
-const ordersDetail = [
+const orders = [
   {
     _id: "5b21ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 1",
+    name: "F",
     address: "123 House No, Street 5, Riyadh",
     status: "processing",
     date: "12/05/2021",
@@ -12,10 +12,10 @@ const ordersDetail = [
   },
   {
     _id: "5b21ss22ca3eeb7f6fbccd471815",
-    orderId: "ID-123",
-    name: "Name 2",
+    orderId: "ID-125",
+    name: "Z",
     address: "123 House No, Street 5, Riyadh",
-    status: "processing",
+    status: "delivering",
     date: "12/05/2021",
     shipping: "15,123 SAR",
     total: "15,123 SAR",
@@ -24,9 +24,9 @@ const ordersDetail = [
   {
     _id: "5b21ss876asd22ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 3",
+    name: "C",
     address: "123 House No, Street 5, Riyadh",
-    status: "processing",
+    status: "delivering",
     date: "12/05/2021",
     shipping: "15,123 SAR",
     total: "15,123 SAR",
@@ -35,7 +35,7 @@ const ordersDetail = [
   {
     _id: "5b21ca435dfdf333eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 4",
+    name: "A",
     address: "123 House No, Street 5, Riyadh",
     status: "processing",
     date: "12/05/2021",
@@ -46,9 +46,9 @@ const ordersDetail = [
   {
     _id: "5b21ss77sad22ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 5",
+    name: "X",
     address: "123 House No, Street 5, Riyadh",
-    status: "processing",
+    status: "delivering",
     date: "12/05/2021",
     shipping: "15,123 SAR",
     total: "15,123 SAR",
@@ -57,7 +57,7 @@ const ordersDetail = [
   {
     _id: "5b21hjh89ss876asd22ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 6",
+    name: "D",
     address: "123 House No, Street 5, Riyadh",
     status: "processing",
     date: "12/05/2021",
@@ -68,7 +68,7 @@ const ordersDetail = [
   {
     _id: "5b7ss21hjh89ss876asd22ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 7",
+    name: "N",
     address: "123 House No, Street 5, Riyadh",
     status: "processing",
     date: "12/05/2021",
@@ -79,7 +79,7 @@ const ordersDetail = [
   {
     _id: "5b21hjh88s89ss876asd22ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 8",
+    name: "S",
     address: "123 House No, Street 5, Riyadh",
     status: "processing",
     date: "12/05/2021",
@@ -89,8 +89,8 @@ const ordersDetail = [
   },
   {
     _id: "5b21hjh8sad8s89ss876asd22ca3eeb7f6fbccd471815",
-    orderId: "ID-123",
-    name: "Name 9",
+    orderId: "ID-124",
+    name: "D",
     address: "123 House No, Street 5, Riyadh",
     status: "processing",
     date: "12/05/2021",
@@ -101,9 +101,9 @@ const ordersDetail = [
   {
     _id: "5b21hjhsad9988s89ss876asd22ca3eeb7f6fbccd471815",
     orderId: "ID-123",
-    name: "Name 10",
+    name: "E",
     address: "123 House No, Street 5, Riyadh",
-    status: "processing",
+    status: "delivering",
     date: "12/05/2021",
     shipping: "15,123 SAR",
     total: "15,123 SAR",
@@ -111,6 +111,6 @@ const ordersDetail = [
   },
 ];
 
-export function getOrdersDetail() {
-  return ordersDetail;
+export function getOrders() {
+  return orders;
 }

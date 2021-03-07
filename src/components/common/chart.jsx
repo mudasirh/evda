@@ -23,7 +23,7 @@ const Chart = ({chartData}) => {
       <Line
         data={chartData}
         width={500}
-        height={300}
+        height={250}
         options={{
           maintainAspectRatio: false,
           responsive: true,

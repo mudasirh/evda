@@ -1,6 +1,7 @@
+import Products from "./products";
 import Dashboard from "./dashboard";
 
-const SideNav = ({chartData, getChartData, categories}) => {
+const SideNav = ({chartData, orders, categories, sortColumn}) => {
   return (
     <main className='container-fluid p-0'>
       <div className='d-flex align-items-start'>
@@ -158,15 +159,20 @@ const SideNav = ({chartData, getChartData, categories}) => {
         <div className='tab-content sideNav-content' id='v-pills-tabContent'>
           {/* Dashboard */}
           <div className='tab-pane fade show active' id='v-pills-home'>
-            <Dashboard chartData={chartData} categories={categories} />
+            <Dashboard
+              chartData={chartData}
+              categories={categories}
+              orders={orders}
+              sortColumn={sortColumn}
+            />
           </div>
 
-          {/* Drivers */}
+          {/* orders */}
           <div className='tab-pane fade' id='v-pills-orders'>
             orders
           </div>
           <div className='tab-pane' id='v-pills-products'>
-            products
+            <Products />
           </div>
         </div>
       </div>
